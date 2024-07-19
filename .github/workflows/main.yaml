@@ -2,19 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
-
-permissions: read-all
+    branches: [ master ]
 
 jobs:
   auth:
-
     # Add "id-token" with the intended permissions.
     permissions:
-      contents: 'read'
-      id-token: 'write'
+      id-token: read
 
     runs-on: ubuntu-latest
     steps:
